@@ -1,0 +1,182 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image:url('../photos/agriculture.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center; /* Align logo and text */
+    gap: 10px; /* Space between the logo and text */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d8f47;
+    cursor: pointer;
+}
+
+.nav-logo i {
+    font-size: 2rem; /* Adjust the size of the leaf icon */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    color: #2d8f47;
+}
+
+
+
+.login-container {
+  background: #fff;
+  margin-right: 200px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  width: 300px;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+
+
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #2d8f47;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  background: #1c5985;
+}
+
+
+
+#errorMsg {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+.hero {
+    margin-top: 20px;
+    min-height: 60vh;
+    min-width: 40vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 70px 0;
+
+    
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+.highlight {
+    color: #ffffff;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

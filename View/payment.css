@@ -1,0 +1,238 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    padding: 50px 0;
+    color: #333;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    max-width: 1100px;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.checkout-form {
+    width: 60%;
+    padding: 30px;
+}
+
+.checkout-form h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.payment-method,
+.card-details,
+.billing-details {
+    margin-bottom: 30px;
+}
+
+.payment-method label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.payment-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 10px; /* Adds space between the radio button and image */
+    vertical-align: middle;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.payment-options label img {
+    width: 40px;
+    height : auto;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.payment-options span {
+    font-size: 16px; /* Adjust text size */
+}
+
+
+.card-details label,
+.billing-details label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.card-details input,
+.billing-details input,
+.billing-details select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.card-details input:focus,
+.billing-details input:focus,
+.billing-details select:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+.expiry-cvv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiry-cvv div {
+    width: 48%;
+}
+
+/* Order Summary */
+.order-summary {
+    width: 35%;
+    background-color: #fff;
+    
+    text-align: left;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+    background-color: #328cec;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 35px;
+
+
+
+    
+}
+
+.order-header h3 {
+    font-size: 20px;
+    
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.order-item span {
+    font-size: 16px;
+    
+}
+
+.order-details {
+    margin-top: 20px;
+    padding: 0 25px;
+}
+
+.order-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 25px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;  /* Stack the buttons vertically */
+    align-items: center;  /* Center the buttons */
+    margin-top: 30px;
+}
+
+.place-order {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 20px 40px;  /* Increase the padding to make the button bigger */
+    font-size: 22px;  /* Increase the font size */
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;  /* Space between the icon and text */
+    transition: background-color 0.3s;
+    width: 80%;  /* Set the width of the button */
+    margin-bottom: 20px;  /* Adds space below the button */
+}
+
+.place-order i {
+    font-size: 18px;  /* Adjust icon size */
+}
+
+.place-order:hover {
+    background-color: #218838;
+}
+
+.go-back {
+    background-color: #dc3545;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 30%;  /* Set the width of the button */
+}
+
+.go-back:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .checkout-form {
+        width: 100%;
+    }
+
+    .order-summary {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

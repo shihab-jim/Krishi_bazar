@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Smart Krishi Bazar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="registration.css">
+    <script src="../Controller/registration.js"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span onclick="window.location.href='../index.php'">Smart Krishi Bazar </span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="register-section">
+        <div class="container">
+            <h2>Register Your Account</h2>
+            <form name="registerForm" action="../Model/registration.php" method="POST" class="register-form" onsubmit="return validateForm()">
+                
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mobile">Mobile number</label>
+                <input type="tel" id="mobile" name="mobile" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <button type="submit">Register</button>
+                
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p> &copy; 2025 Smart Krishi Bazar. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

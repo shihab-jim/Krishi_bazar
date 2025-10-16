@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout</title>
+    <link rel="stylesheet" href="payment.css">
+    <script src="../Controller/payment.js" defer></script>
+</head>
+<body>
+
+<div class="checkout-container">
+    <div class="checkout-form">
+        <h2>Secure Checkout</h2>
+        <form id="payment-form" action="#" method="POST">
+            <!-- Payment Method -->
+            <div class="payment-method">
+                <label for="payment-method">Choose your preferred payment method:</label>
+                <div class="payment-options">
+                    <input type="radio" name="payment-method" id="american-express" checked>
+                    <label for="american-express">
+                        <img src="../photos/american.png" alt="american-express">
+                        <span>American Express</span>
+                    </label>
+
+                    <input type="radio" name="payment-method" id="credit-card">
+                    <label for="credit-card">
+                        <img src="../photos/credit.jpg" alt="credit-card">
+                        <span>Credit card</span>
+                    </label>
+
+                    <input type="radio" name="payment-method" id="debit-card">
+                    <label for="debit-card">
+                        <img src="../photos/debit.jpg" alt="debit-card">
+                        <span>Debit card</span>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- Card Details -->
+            <div class="card-details">
+                <label for="card-holder">Cardholder Name</label>
+                <input type="text" id="card-holder" name="cardholder-name"  required>
+
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="**** **** **** 1111" required pattern="\d{4} \d{4} \d{4} \d{4}" maxlength="19">
+
+                <div class="expiry-cvv">
+                    <div>
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required pattern="\d{2}/\d{2}">
+                    </div>
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="CVV" required pattern="\d{3}">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing Details -->
+            <div class="billing-details">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button type="submit" class="place-order">
+                    <i class="fas fa-lock"></i> Place Order
+                </button>
+                <button type="button" class="go-back" onclick="window.history.back();">Go Back</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+    <div class="order-header">
+        <h3>Your Order</h3>
+    </div>
+
+    <div class="order-item">
+        <span>Product Cost</span>
+        <p id="product-cost">X</p>
+    </div>
+    
+    <div class="order-details">
+        <div class="order-detail">
+            <span>Subtotal</span>
+            <p id="subtotal">X</p>
+        </div>
+        <div class="order-detail">
+            <span>Promo Code Applied</span>
+            <span id="promo">- ৳0.00</span>
+        </div>
+        <div class="order-detail">
+            <span>Shipping & Handling</span>
+            <span id="shipping">৳0.00</span>
+        </div>
+        <div class="order-detail">
+            <span>Estimated Tax</span>
+            <span id="tax">৳10.00</span>
+        </div>
+        <div class="order-total">
+            <span>Total price:</span>
+            <p id="total">X</p>
+        </div>
+    </div>
+</div>
+    
+</div>
+<script>
+window.onload = function() {
+    // Retrieve the total price from localStorage
+    let totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+
+    // Add ৳10 tax
+    const tax = 10;
+    const finalPrice = totalPrice + tax;
+
+    // Update each price display
+    document.getElementById("product-cost").textContent = `৳${totalPrice.toFixed(2)}`;
+    document.getElementById("subtotal").textContent = `৳${totalPrice.toFixed(2)}`;
+    document.getElementById("tax").textContent = `৳${tax.toFixed(2)}`;
+    document.getElementById("total").textContent = `৳${finalPrice.toFixed(2)}`;
+};
+
+document.getElementById("payment-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Validate required fields
+    const requiredFields = document.querySelectorAll('input[required], select[required]');
+    let isValid = true;
+
+    requiredFields.forEach(function(field) {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.style.border = "2px solid red";
+        } else {
+            field.style.border = "";
+        }
+    });
+
+    if (!isValid) {
+        alert("Please fill out all required fields.");
+    } else {
+        alert("Thanks for ordering!");
+        localStorage.removeItem('cart');
+        localStorage.removeItem('totalPrice');
+        setTimeout(function() {
+            window.location.replace("../Model/product.php");
+        }, 2000);
+    }
+});
+</script>
+
+
+
+</body>
+</html>

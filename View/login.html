@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+              <i class="fas fa-leaf"></i>
+                <span onclick="window.location.href='../index.php'">Smart Krishi Bazar </span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1><span class="highlight">Smart Krishi Bazar</span></h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" action="../Model/login.php" method="POST" onsubmit="return validateForm(event)">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+            <p id="error-msg" class="error"></p>
+            <p>Don't have an account? <a href="registration.html">Sign Up</a></p>
+        </form>
+    </div>
+
+    <script src="../Controller/login.js"></script>
+</body>
+</html>
