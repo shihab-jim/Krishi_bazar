@@ -1,11 +1,38 @@
-CREATE TABLE `products` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `seller_username` VARCHAR(100) NOT NULL,
-  `product_name` VARCHAR(100) NOT NULL,
-  `category` VARCHAR(255) NOT NULL,
-  `price` DECIMAL(10,2) NOT NULL,
-  `description` TEXT NOT NULL,
-  `image` VARCHAR(255) NOT NULL,
-  `quantity` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE DATABASE IF NOT EXISTS `krishi_bazar`
+DEFAULT CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+
+
+-- Table for products
+CREATE TABLE products (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  seller_username VARCHAR(100) NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  category VARCHAR(255) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  description TEXT NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  quantity VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
 ) 
+
+
+-- Table for user registration
+CREATE TABLE registration (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  mobile VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+-- Table for seller registration
+CREATE TABLE seller_registration (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  mobile VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
+);
